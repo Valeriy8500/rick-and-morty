@@ -1,0 +1,1 @@
+import{d as e,R as s,j as n}from"./index-9d24a4f4.js";const u=({page:t})=>{const o=e();return s.useEffect(()=>{t==="home"&&setTimeout(()=>{o("/")},1e3)},[o,t]),n.jsx("h1",{className:t?"not-found-default":"not-found",children:"Not found"})};export{u as default};

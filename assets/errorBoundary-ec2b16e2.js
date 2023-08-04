@@ -1,0 +1,1 @@
+import{r as e,j as s}from"./index-9d24a4f4.js";class o extends e.Component{constructor(r){super(r),this.state={hasError:!1}}static getDerivedStateFromError(){return{hasError:!0}}render(){return this.state.hasError?s.jsx("h3",{className:"error-message",children:"Что-то пошло не так!"}):this.props.children}}export{o as default};
