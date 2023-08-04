@@ -12,31 +12,8 @@ const LocationCard = lazy(() => import("../locationCard/locationCard"));
 const NotFound = lazy(() => import("../../components/notFound/notFound"));
 const Home = lazy(() => import("../home/home"));
 
-export function BaseList({ page, url, pageNumber, setPageNumber }) {
-  const observer = React.useRef();
-
-  const {
-    loading,
-    elements,
-    hasMore
-  } = useListElements(url, pageNumber);
-
-  const lastNodeRef = React.useCallback((node) => {
-    if (observer.current) {
-      observer.current.disconnect();
-    }
-
-    observer.current = new IntersectionObserver((entries) => {
-      // проверяем, виден ли последний элемент на экране
-      if (entries[0].isIntersecting && hasMore) {
-        setPageNumber(prev => prev + 1);
-      }
-    });
-
-    if (node) {
-      observer.current.observe(node);
-    }
-  }, [hasMore, setPageNumber]);
+export function BaseList({ page, url }) {
+  const { loading, elements } = useListElements(url);
 
   const list = React.useMemo(() => {
     if (page === "home") {
@@ -52,7 +29,6 @@ export function BaseList({ page, url, pageNumber, setPageNumber }) {
               key={item.id}
               className="nav-container_navlink"
               style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
-              ref={lastNodeRef}
             >
               <span>{item.name}</span>
             </NavLink>
@@ -82,7 +58,6 @@ export function BaseList({ page, url, pageNumber, setPageNumber }) {
               key={item.id}
               className="nav-container_navlink"
               style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
-              ref={lastNodeRef}
             >
               <span>{item.name}</span>
             </NavLink>
@@ -112,7 +87,6 @@ export function BaseList({ page, url, pageNumber, setPageNumber }) {
               key={item.id}
               className="nav-container_navlink"
               style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
-              ref={lastNodeRef}
             >
               <span>{item.name}</span>
             </NavLink>
@@ -134,7 +108,7 @@ export function BaseList({ page, url, pageNumber, setPageNumber }) {
         <>{locationList}</>
       )
     }
-  }, [page, elements, lastNodeRef]);
+  }, [page, elements]);
 
   const routes = React.useMemo(() => {
     if (page === "characters") {

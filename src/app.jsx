@@ -20,13 +20,11 @@ const NotFound = lazy(() => import("./components/notFound/notFound"));
 const ErrorBoundary = lazy(() => import("./components/errorBoundary/errorBoundary"));
 
 function App() {
-  const [pageNumber, setPageNumber] = React.useState(1);
-
   return (
     <AuthProvider>
       <div className="app">
         <Routes>
-          <Route element={<NavigationPanel setPageNumber={setPageNumber} />} >
+          <Route element={<NavigationPanel />} >
             <Route path="/" element={<ErrorBoundary><BaseList page="home" /></ErrorBoundary>} />
             <Route
               path="/characters/*"
@@ -36,8 +34,6 @@ function App() {
                     <BaseList
                       page="characters"
                       url={characterUrl}
-                      pageNumber={pageNumber}
-                      setPageNumber={setPageNumber}
                     />
                   </ErrorBoundary>
                 </PrivateRoute>
@@ -51,8 +47,6 @@ function App() {
                     <BaseList
                       page="episode"
                       url={episodeUrl}
-                      pageNumber={pageNumber}
-                      setPageNumber={setPageNumber}
                     />
                   </ErrorBoundary>
                 </PrivateRoute>
@@ -66,8 +60,6 @@ function App() {
                     <BaseList
                       page="location"
                       url={locationUrl}
-                      pageNumber={pageNumber}
-                      setPageNumber={setPageNumber}
                     />
                   </ErrorBoundary>
                 </PrivateRoute>

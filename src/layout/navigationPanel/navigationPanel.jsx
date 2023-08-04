@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
-export function NavigationPanel({ setPageNumber }) {
+export function NavigationPanel() {
   return (
     <>
       <div className="navigation-panel">
@@ -9,39 +9,18 @@ export function NavigationPanel({ setPageNumber }) {
         <NavLink
           to="/characters"
           className="navigation-panel_navlink"
-          onClick={(e) => setPageNumber((prev) => {
-            if (e.target.className === "navigation-panel_navlink active") {
-              return prev;
-            } else {
-              return 1;
-            }
-          })}
         >
           Герои
         </NavLink>
         <NavLink
           to="/episode"
           className="navigation-panel_navlink"
-          onClick={(e) => setPageNumber((prev) => {
-            if (e.target.className === "navigation-panel_navlink active") {
-              return prev;
-            } else {
-              return 1;
-            }
-          })}
         >
           Эпизоды
         </NavLink>
         <NavLink
           to="/location"
           className="navigation-panel_navlink"
-          onClick={(e) => setPageNumber((prev) => {
-            if (e.target.className === "navigation-panel_navlink active") {
-              return prev;
-            } else {
-              return 1;
-            }
-          })}
         >
           Локации
         </NavLink>
