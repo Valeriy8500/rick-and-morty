@@ -27,6 +27,7 @@ export function BaseList({ page, url }) {
             <NavLink
               to={`/characters/${item.id}`}
               key={item.id}
+              title={item.name}
               className="nav-container_navlink"
               style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
             >
@@ -39,6 +40,7 @@ export function BaseList({ page, url }) {
               to={`/characters/${item.id}`}
               key={item.id}
               className="nav-container_navlink"
+              title={item.name}
               style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
             >
               <span>{item.name}</span>
@@ -57,6 +59,7 @@ export function BaseList({ page, url }) {
               to={`/episode/${item.id}`}
               key={item.id}
               className="nav-container_navlink"
+              title={item.name}
               style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
             >
               <span>{item.name}</span>
@@ -68,6 +71,7 @@ export function BaseList({ page, url }) {
               to={`/episode/${item.id}`}
               key={item.id}
               className="nav-container_navlink"
+              title={item.name}
               style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
             >
               <span>{item.name}</span>
@@ -86,6 +90,7 @@ export function BaseList({ page, url }) {
               to={`/location/${item.id}`}
               key={item.id}
               className="nav-container_navlink"
+              title={item.name}
               style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
             >
               <span>{item.name}</span>
@@ -97,6 +102,7 @@ export function BaseList({ page, url }) {
               to={`/location/${item.id}`}
               key={item.id}
               className="nav-container_navlink"
+              title={item.name}
               style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
             >
               <span>{item.name}</span>

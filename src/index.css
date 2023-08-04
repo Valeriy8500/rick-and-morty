@@ -4,11 +4,14 @@
   height: 100vh;
   margin: 0 auto;
   background-color: #1b1b1b;
+  padding-left: 40px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  max-width: 1280px;
 }
 
 .app {
   width: 100%;
-  max-width: 1024px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -67,7 +70,7 @@
   text-decoration: none;
   background-color: #303030;
   width: 340px;
-  height: 35px;
+  min-height: 35px;
   border-bottom: 1px solid #474646;
   display: flex;
   align-items: center;
@@ -85,6 +88,9 @@
 
 .nav-container_navlink>span {
   padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .characters-card-container {
@@ -93,9 +99,9 @@
   border-radius: 10px;
   height: 220px;
   width: 450px;
-  position: fixed;
-  right: 33%;
-  left: 42%;
+  position: sticky;
+  top: 0;
+  margin-left: 20px;
 }
 
 .characters-card-container_img {
@@ -123,13 +129,13 @@
   flex-direction: column;
   background-color: #303030;
   border-radius: 10px;
-  height: 220px;
+  height: 180px;
   width: 300px;
   padding: 0px 20px 10px 10px;
   box-sizing: border-box;
-  position: fixed;
-  right: 33%;
-  left: 42%;
+  position: sticky;
+  top: 0;
+  margin-left: 20px;
 }
 
 .episode-card-container_el {
@@ -142,13 +148,13 @@
   flex-direction: column;
   background-color: #303030;
   border-radius: 10px;
-  height: 220px;
+  height: 180px;
   width: 300px;
   padding: 0px 20px 10px 10px;
   box-sizing: border-box;
-  position: fixed;
-  right: 33%;
-  left: 42%;
+  position: sticky;
+  top: 0;
+  margin-left: 20px;
 }
 
 .location-card-container_el {
@@ -231,4 +237,170 @@
   cursor: pointer;
   opacity: 0.6;
   background-color: #04b27c;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding-left: 20px;
+    padding-top: 0;
+  }
+
+  .characters-card-container {
+    flex-direction: column;
+    height: 200px;
+    width: 200px;
+    margin-left: 40px;
+  }
+
+  .characters-card-container_img {
+    border-radius: 10px;
+    margin: 0;
+  }
+
+  .characters-card-container_info {
+    background-color: #303030;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .episode-card-container {
+    width: 250px;
+  }
+
+  .location-card-container {
+    width: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .characters-card-container {
+    margin-left: 20px;
+  }
+
+  .nav-container_navlink {
+    width: 300px;
+  }
+
+  .episode-card-container {
+    margin-right: 20px;
+  }
+
+  .location-card-container {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 414px) {
+  .characters-card-container {
+    width: 150px;
+  }
+
+  .characters-card-container_img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .characters-card-container_info {
+    width: 150px;
+    box-sizing: border-box;
+  }
+
+  .nav-container_navlink {
+    width: 200px;
+  }
+
+  .episode-card-container {
+    width: 150px;
+    height: 230px;
+  }
+
+  .location-card-container {
+    width: 150px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 375px) {
+  .characters-card-container {
+    width: 125px;
+  }
+
+  .characters-card-container_img {
+    height: 125px;
+    width: 125px;
+  }
+
+  .characters-card-container_info {
+    width: 125px;
+  }
+
+  .episode-card-container {
+    height: 300px;
+  }
+
+  .location-card-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-container_navlink {
+    width: 180px;
+  }
+
+  .navigation-panel_navlink {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .page {
+    padding-left: 10px;
+  }
+
+  .nav-container_navlink {
+    width: 160px;
+  }
+
+  .navigation-panel_home {
+    margin-right: 30px;
+  }
+
+  .navigation-panel_navlink {
+    margin-right: 15px;
+  }
+
+  .input {
+    width: 285px;
+    height: 25px;
+  }
+
+  .submit-btn {
+    margin-top: 5px;
+  }
+
+  .characters-card-container {
+    width: 110px;
+  }
+
+  .characters-card-container_img {
+    height: 110px;
+    width: 110px;
+  }
+
+  .characters-card-container_info {
+    width: 110px;
+  }
+
+  .episode-card-container {
+    height: 340px;
+    margin-left: 10px;
+    width: 130px;
+  }
+
+  .location-card-container {
+    margin-left: 10px;
+    width: 130px;
+  }
 }
